@@ -3,6 +3,7 @@ package com.poppytait.cyclingvideosapi.service;
 import com.google.api.services.youtube.model.SearchResult;
 import com.poppytait.cyclingvideosapi.config.Config;
 import com.poppytait.cyclingvideosapi.exception.VideoNotFoundException;
+import com.poppytait.cyclingvideosapi.model.ProjectIdAndTitle;
 import com.poppytait.cyclingvideosapi.model.Video;
 import com.poppytait.cyclingvideosapi.repository.IVideoRepository;
 import org.springframework.stereotype.Service;
@@ -57,15 +58,17 @@ public class VideoService implements IVideoService {
         }
     }
 
+    @Override
+    public List<ProjectIdAndTitle> search(String query) {
+        return repository.findByTitleContaining(query);
+    }
+
     private Video buildVideo(SearchResult result) {
         int id = result.getId().getVideoId().hashCode();
         String title = result.getSnippet().getTitle();
         Instant publishedAt = Instant.parse(result.getSnippet().getPublishedAt().toStringRfc3339());
 
         return new Video(id, title, publishedAt);
-
     }
-
-
 }
 

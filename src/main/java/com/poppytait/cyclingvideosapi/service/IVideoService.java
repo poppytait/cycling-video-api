@@ -1,6 +1,7 @@
 package com.poppytait.cyclingvideosapi.service;
 
 import com.poppytait.cyclingvideosapi.exception.VideoNotFoundException;
+import com.poppytait.cyclingvideosapi.model.ProjectIdAndTitle;
 import com.poppytait.cyclingvideosapi.model.Video;
 
 import java.io.IOException;
@@ -11,4 +12,5 @@ public interface IVideoService {
     List<Video> getVideos();
     Video getVideo(Integer id) throws VideoNotFoundException;
     void deleteVideo(Integer id) throws VideoNotFoundException;
+    List<ProjectIdAndTitle> search(String query);
 }

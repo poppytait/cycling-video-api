@@ -2,6 +2,7 @@ package com.poppytait.cyclingvideosapi.controller;
 
 import com.poppytait.cyclingvideosapi.config.Config;
 import com.poppytait.cyclingvideosapi.exception.VideoNotFoundException;
+import com.poppytait.cyclingvideosapi.model.ProjectIdAndTitle;
 import com.poppytait.cyclingvideosapi.model.Video;
 import com.poppytait.cyclingvideosapi.service.IVideoService;
 import com.poppytait.cyclingvideosapi.service.IYouTubeService;
@@ -43,5 +44,8 @@ public class VideoController {
         videoService.deleteVideo(id);
     }
 
-
+    @GetMapping("/search")
+    public List<ProjectIdAndTitle> search(@RequestParam String q) {
+        return videoService.search(q);
+    }
 }
