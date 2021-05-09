@@ -21,7 +21,7 @@ public class YouTubeService implements IYouTubeService {
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String PART = "snippet";
     private static final String TYPE = "video";
-    private static final long MAX_RESULTS = 10L;
+    private static final long MAX_RESULTS = 100L;
 
     private final YouTube youTube;
     private final Config.YouTubeConfig config;

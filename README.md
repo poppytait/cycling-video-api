@@ -6,6 +6,14 @@ Run MySQL container:
 
 `docker run -p 3306:3306 --name some-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7`
 
+You must set the environment variable `YOUTUBE_API_KEY` with your api key. 
+
 Run application:
 
 `./gradlew bootRun`
+
+##API Docs
+Can be accessed here: https://documenter.getpostman.com/view/10876522/TzRREURq
+
+## Next Steps
+- Handle several pages of YouTube search results (currently only first page is handled).
