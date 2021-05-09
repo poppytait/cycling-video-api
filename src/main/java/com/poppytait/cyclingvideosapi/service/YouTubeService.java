@@ -17,7 +17,7 @@ import java.util.List;
 
 @Service
 public class YouTubeService implements IYouTubeService {
-    private static final String APPLICATION_NAME = "API code samples";
+    private static final String APPLICATION_NAME = "Cycling Videos API";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String PART = "snippet";
     private static final String TYPE = "video";
