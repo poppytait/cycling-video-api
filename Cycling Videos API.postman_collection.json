@@ -49,7 +49,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "localhost:8080/videos/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"videos",
+						""
+					]
 				}
 			},
 			"response": []
@@ -79,7 +87,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "localhost:8080/videos/search?q=PRO",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"videos",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "PRO"
+						}
+					]
 				}
 			},
 			"response": []
