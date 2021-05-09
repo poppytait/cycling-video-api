@@ -1,13 +1,11 @@
 package com.poppytait.cyclingvideosapi.controller;
 
-import com.google.api.services.youtube.model.SearchResult;
 import com.poppytait.cyclingvideosapi.config.Config;
+import com.poppytait.cyclingvideosapi.exception.VideoNotFoundException;
+import com.poppytait.cyclingvideosapi.model.Video;
 import com.poppytait.cyclingvideosapi.service.IVideoService;
 import com.poppytait.cyclingvideosapi.service.IYouTubeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -31,8 +29,19 @@ public class VideoController {
     }
 
     @GetMapping("/")
-    public List<SearchResult> getPlaylistItems() throws IOException {
-       return youTubeService.searchChannel(config.getGcnChannelId());
+    public List<Video> getVideos() {
+       return videoService.getVideos();
     }
+
+    @GetMapping("/{id}")
+    public Video getVideo(@PathVariable Integer id) throws VideoNotFoundException {
+        return videoService.getVideo(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteVideo(@PathVariable Integer id) throws VideoNotFoundException {
+        videoService.deleteVideo(id);
+    }
+
 
 }
