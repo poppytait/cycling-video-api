@@ -10,7 +10,7 @@ Run application with api key environment variable:
 
 `YOUTUBE_API_KEY={your-key-here} ./gradlew bootRun`
 
-##API Docs
+## API Docs
 Can be accessed here: https://documenter.getpostman.com/view/10876522/TzRREURq
 
 ## Next Steps
